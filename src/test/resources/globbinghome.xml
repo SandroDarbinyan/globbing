@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Globbing" verbose="1">
+	<test name="Pages">
+		<classes>
+			<class name="am.globbing.test.header.GlobbingHeaderTest">
+				<methods>
+					<include name="rusLangSwitcherTest" />
+					<include name="openLoginWindowTest" />
+					<include name="goToRegisterPageTest" />
+					<include name="loginPositiveTest" />
+					<include name="loginNegativeTest" />
+				</methods>
+			</class>
+			<class name="am.globbing.test.menu.GlobbingMenuTest">
+				<methods>
+					<include name="logoFunctionalityTest" />
+					<include name="aboutUsLinkTest" />
+					<include name="contactUsUsLinkTest" />
+					<include name="buyForMeLinkTest" />
+					<include name="getAddressLinkTest" />
+					<include name="topShopsLinkTest" />
+					<include name="calculatorLinkTest" />
+				</methods>
+			</class>
+			<class
+				name="am.globbing.test.calculator.GlobbingCalculatorTest">
+				<methods>
+					<include name="usCalculatorTest" />
+					<include name="rusCalculatorTest" />
+					<include name="germCalculatorTest" />
+				</methods>
+			</class>
+			<class name="am.globbing.test.register.GlobbingRegisterTest">
+				<include name="registrationPositiveTest" />
+				<include name="registrationNegativeTest" />
+			</class>
+			<class name="am.globbing.test.aboutus.GlobbingAboutUsTest">
+				<include name="goToWhyGlobbingTest" />
+				<include name="goToTeamTest" />
+				<include name="goToSocialResponsibilityTest" />
+			</class>
+		</classes>
+	</test>
+</suite>
