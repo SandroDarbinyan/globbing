@@ -2,7 +2,7 @@
 <suite name="Globbing" verbose="1">
 	<test name="Pages">
 		<classes>
-			<class name="am.globbing.test.header.GlobbingHeaderTest">
+		 	<class name="am.globbing.test.header.GlobbingHeaderTest">
 				<methods>
 					<include name="rusLangSwitcherTest" />
 					<include name="openLoginWindowTest" />
@@ -38,7 +38,11 @@
 				<include name="goToWhyGlobbingTest" />
 				<include name="goToTeamTest" />
 				<include name="goToSocialResponsibilityTest" />
-			</class>
+			</class> 
+			<class name="am.globbing.test.contactus.GlobbingContactUsTest">
+				 <include name="arabkirBranchTest" />
+				 <include name="hrazdanBranchTest" />
+			</class> 
 		</classes>
 	</test>
 </suite>
