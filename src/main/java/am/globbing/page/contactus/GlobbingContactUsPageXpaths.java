@@ -7,5 +7,7 @@ public class GlobbingContactUsPageXpaths{
 	public static final String ARABKIR_INFO = "//p[contains(.,'Arabkir')]";
 	public static final String HRAZDAN_BRANCH = "//div[@class='wh-text-name mb--10 fs14'][contains(.,'Hrazdan')]";
 	public static final String HRAZDAN_INFO = "(//p[contains(.,'Hrazdan')])[1]";
+	public static final String YOUTUBE_ICON = "//span[contains(.,'Youtube')]";
+	public static final String INSTAGRAM_ICON = "//span[contains(.,'Instagram')]";
 	
 }
