@@ -39,7 +39,7 @@ public class GlobbingBaseTest {
 
 	@AfterClass
 	public void cleanUp() {
-	//	 driver.quit();
+		 driver.quit();
 	}
 
 	public Properties readPropertiesFile(String fileName) throws IOException {
