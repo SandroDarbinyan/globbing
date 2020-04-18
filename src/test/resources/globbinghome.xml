@@ -44,6 +44,9 @@
 				<include name="hrazdanBranchTest" />
 				<include name="youtubeIconTest" />
 				<include name="instagramIconTest" />
+				<include name="contactFormFunctionalityTest1" />
+				<include name="contactFormFunctionalityTest2" />
+				<include name="contactFormFunctionalityTest3" />
 			</class>
 		</classes>
 	</test>

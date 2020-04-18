@@ -92,7 +92,8 @@ public class GlobbingContactUsTest extends GlobbingBaseTest {
 	// Test Case ID:24
 	// Given that the user is on globbing.am home page,when user clicks on "Contact
 	// Us" button,
-	// clicks on "Instagram" icon,then the Instagram account of Globbing is opened in a new window
+	// clicks on "Instagram" icon,then the Instagram account of Globbing is opened
+	// in a new window
 	@Test
 	public void instagramIconTest() {
 		// 24.2:Click on "Contact Us" button
@@ -124,6 +125,86 @@ public class GlobbingContactUsTest extends GlobbingBaseTest {
 		// Switch back to original browser (first window)
 		driver.switchTo().window(winHandleBefore);
 
+	}
+
+	// Test Case ID:25
+	// Given that the user is on globbing.am home page,when user clicks on "Contact
+	// Us" page,
+	// fills in contact form with correct values and clicks on "Send" button,then
+	// message should be sent
+	@Test
+	public void contactFormFunctionalityTest1() {
+		// 25.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 25.3.Fills in "Name" input field
+		page.fillInName("Name");
+		// 25.4.Fills in "Subject" input filed
+		page.fillInSubject();
+		// 25.5.Fills in "Email" input field
+		page.fillInEmailField("name@name.com");
+		// 25.6.Fills in "Message text" input filed
+		page.fillInMessage("Message");
+		// 25.7.Clicks on "Send" button
+		page.clickOnSendButton();
+		page.verifyElementClickable(page.messageIsSentText);
+		Assert.assertTrue(page.messageIsSentText.isDisplayed());
+
+		page.closeModale();
+	}
+
+	// Test Case ID:26
+	// Given that the user is on globbing.am home page,when user clicks on "Contact
+	// Us" button,
+	// fills in contact form with correct values besides email input field,clicks on
+	// "Send" button,
+	// then message should not be sent and error message should be displayed for
+	// "Email" input field
+	@Test
+	public void contactFormFunctionalityTest2() {
+		// 26.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 26.3.Fills in "Name" input field
+		page.fillInName("Name");
+		// 26.4.Fills in "Subject" input filed
+		page.fillInSubject();
+		// 26.5.Fills in "Message text" input filed
+		page.fillInMessage("Message");
+		// 26.6.Clicks on "Send" button
+		page.clickOnSendButton();
+		page.verifyElementClickable(page.invalidEmail);
+		Assert.assertTrue(page.invalidEmail.isDisplayed());
+	}
+	
+	// Test Case ID:27
+	// Given that the user is on globbing.am home page,when user clicks on "Contact Us" button,
+	//fills in contact form with correct values besides email input field,clicks on "Send" button,
+	//then the message should not be sent and error message should be displayed for "Email" input field
+	@Test
+	public void contactFormFunctionalityTest3() {
+		// 27.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 27.3.Fills in "Name" input field
+		page.fillInName("Name");
+		// 27.4.Fills in "Subject" input filed
+		page.fillInSubject();
+		// 27.5.Fills in "Email" input filed
+		page.fillInEmailField("test@test.com");
+		// 27.6.Clicks on "Send" button
+		page.clickOnSendButton();
+		page.verifyElementClickable(page.invalidMessage);
+		Assert.assertTrue(page.invalidMessage.isDisplayed());
 	}
 
 }

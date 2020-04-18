@@ -1,5 +1,6 @@
 package am.globbing.page.contactus;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,7 +40,37 @@ public class GlobbingContactUsPage extends GlobbingMenuPage {
 	@FindBy(xpath = GlobbingContactUsPageXpaths.INSTAGRAM_ICON)
 	public WebElement instagramIcon;
 	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.NAME_INPUT_FIELD)
+	public WebElement nameField;
 	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.SUBJECT_INPUT_FIELD)
+	public WebElement subjectField;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.EMAIL_INPUT_FIELD)
+	public WebElement emailField;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.MESSAGE_INPUT_FIELD)
+	public WebElement messageField;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.SEND_BUTTON)
+	public WebElement sendButton;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.MESSAGE_IS_SENT)
+	public WebElement messageIsSentText;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.CLOSE_MODALE)
+	public WebElement closeModale;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.SUBJECT_IDEA)
+	public WebElement subjectIdea;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.INVALID_EMAIL)
+	public WebElement invalidEmail;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.INVALID_MESSAGE)
+	public WebElement invalidMessage;
+	
+		
 	public void clickOnArabkirBranch() {
 		arabkirBranch.click();
 	}
@@ -57,5 +88,42 @@ public class GlobbingContactUsPage extends GlobbingMenuPage {
 		instagramIcon.click();
 		return new GlobbingInstagramPage(driver);
 	}
-
+	
+	public void fillInName(String name) {
+		nameField.sendKeys(name);
+	}
+	
+	public void fillInSubject() {
+		subjectField.click();
+		subjectIdea.click();
+	}
+	
+	public void fillInEmailField(String email) {
+		emailField.sendKeys(email);
+	}
+	
+	public void fillInMessage(String message) {
+		messageField.sendKeys(message);
+	}
+	
+	public void clickOnSendButton() {
+		sendButton.click();
+	}
+	
+	public void closeModale() {
+		closeModale.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
