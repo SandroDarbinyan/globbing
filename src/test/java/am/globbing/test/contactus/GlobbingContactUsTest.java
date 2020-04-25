@@ -4,8 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import am.globbing.page.contactus.GlobbingContactUsPage;
+import am.globbing.page.faq.GlobbingFaqPage;
 import am.globbing.page.instagram.GlobbingInstagramPage;
 import am.globbing.page.menu.GlobbingMenuPage;
+import am.globbing.page.restricteditems.GlobbingRestrictedItemsPage;
+import am.globbing.page.termsandconditions.GlobbingTermsAndConditionsPage;
 import am.globbing.page.youtube.GlobbingYoutubePage;
 import am.globbing.test.base.GlobbingBaseTest;
 
@@ -27,6 +30,7 @@ public class GlobbingContactUsTest extends GlobbingBaseTest {
 		page.verifyElementClickable(page.arabkirBranch);
 		// 21.3:Click on "Arabkir" branch
 		page.clickOnArabkirBranch();
+		page.verifyElementClickable(page.arabkirInfo);
 		Assert.assertTrue(page.arabkirInfo.isDisplayed());
 
 	}
@@ -182,11 +186,14 @@ public class GlobbingContactUsTest extends GlobbingBaseTest {
 		page.verifyElementClickable(page.invalidEmail);
 		Assert.assertTrue(page.invalidEmail.isDisplayed());
 	}
-	
+
 	// Test Case ID:27
-	// Given that the user is on globbing.am home page,when user clicks on "Contact Us" button,
-	//fills in contact form with correct values besides email input field,clicks on "Send" button,
-	//then the message should not be sent and error message should be displayed for "Email" input field
+	// Given that the user is on globbing.am home page,when user clicks on "Contact
+	// Us" button,
+	// fills in contact form with correct values besides email input field,clicks on
+	// "Send" button,
+	// then the message should not be sent and error message should be displayed for
+	// "Email" input field
 	@Test
 	public void contactFormFunctionalityTest3() {
 		// 27.2.Click on "Contact Us" button
@@ -205,6 +212,65 @@ public class GlobbingContactUsTest extends GlobbingBaseTest {
 		page.clickOnSendButton();
 		page.verifyElementClickable(page.invalidMessage);
 		Assert.assertTrue(page.invalidMessage.isDisplayed());
+	}
+
+	// Test Case ID:28
+	// Given that the user is on globbing.am home page, when user clicks on "Contact
+	// Us" button,
+	// clicks on "FAQ" button, then new page is opened with "Frequently Asked
+	// Questions" title
+	@Test
+	public void faqFunctionalityTest() {
+		// 28.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 28.3.Click on "FAQ" button
+		GlobbingFaqPage faq = page.clickOnFaqLink();
+		faq.verifyElementClickable(faq.faqTitle);
+		Assert.assertTrue(faq.faqTitle.isDisplayed());
+	}
+
+	// Test Case ID:29
+	// Given that the user is on globbing.am home page, when user clicks on "Contact
+	// Us" button,
+	// clicks on "Restricted Items" button, then new page is opened with "Restricted
+	// items" title
+	@Test
+	public void restrictedItemsFunctionalityTest() {
+		// 29.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 29.3.Click on "Restricted Items" button
+		GlobbingRestrictedItemsPage items = page.clickOnRestrictedItemsLink();
+		items.verifyElementClickable(items.restrictedItemsTitle);
+		Assert.assertTrue(items.restrictedItemsTitle.isDisplayed());
+
+	}
+
+	// Test Case ID:30
+	// Given that the user is on globbing.am home page, when user clicks on "Contact
+	// Us" button,
+	// clicks on "Terms and Conditions" button, then new page is opened with "Terms
+	// and Conditions" title
+	@Test
+	public void termsAndConditionsFunctionalityTest() {
+		// 30.2.Click on "Contact Us" button
+		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.contactUsBtn);
+		GlobbingContactUsPage page = menu.gotToContactUsPage();
+		page.verifyElementClickable(page.contactUsForm);
+		Assert.assertTrue(page.contactUsForm.isDisplayed());
+		// 30.3.Click on "Terms and Conditions" button
+		GlobbingTermsAndConditionsPage terms = page.clickOntermsAndConditionsLink();
+		terms.verifyElementClickable(terms.termsAndConditionsTitle);
+		Assert.assertTrue(terms.termsAndConditionsTitle.isDisplayed());
+
 	}
 
 }

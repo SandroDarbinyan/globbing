@@ -22,6 +22,7 @@ public class GlobbingHeaderTest extends GlobbingBaseTest {
 
 		// STEP 1.2:Click on language switcher
 		GlobbingHeaderPage page = new GlobbingHeaderPage(driver);
+		page.verifyElementClickable(page.rusSwitcher);
 		page = page.clickOnLanguageSwitcher();
 
 		// STEP 1.3:Click on Russian flag

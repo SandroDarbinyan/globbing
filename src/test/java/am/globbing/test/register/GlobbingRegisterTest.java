@@ -56,10 +56,12 @@ public class GlobbingRegisterTest extends GlobbingBaseTest {
 	public void registrationNegativeTest() {
 		// STEP 17.2:Click on Register button
 		GlobbingHeaderPage header = new GlobbingHeaderPage(driver);
+		header.verifyElementClickable(header.register);
 		GlobbingRegisterPage page = header.goToRegisterPage();
+		page.verifyElementClickable(page.registerBtn);
 		Assert.assertTrue(page.registerBtn.isDisplayed());
 		// STEP 17.3:Fill in correct email in "Email" input field
-		int rand = ThreadLocalRandom.current().nextInt(100, 1000);
+		int rand = ThreadLocalRandom.current().nextInt(1000, 10000);
 		page.fillInEmail("globbingtest" + rand + "@gmail.com");
 		// STEP 17.4:Fill in correct password in "Password" input field
 		page.fillInPassword("globbingtest");

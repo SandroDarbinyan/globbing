@@ -74,6 +74,7 @@ public class GlobbingMenuTest extends GlobbingBaseTest {
 		Assert.assertTrue(driver.findElements(By.xpath(GlobbingMenuPageXpaths.BUY_FOR_ME_BTN)).size() >= 1);
 		// Step 7.3:Click on "Buy For Me" button
 		GlobbingBuyForMePage page = menu.goToBuyForMePage();
+		page.verifyElementClickable(page.buyForMeTxt);
 		Assert.assertTrue(page.isElementPresent(GlobbingBuyForMePageXpaths.BUY_FOR_ME_TXT));
 
 	}

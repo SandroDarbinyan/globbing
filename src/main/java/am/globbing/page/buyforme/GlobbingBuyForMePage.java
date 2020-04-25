@@ -13,6 +13,6 @@ public class GlobbingBuyForMePage extends GlobbingMenuPage {
 	}
 
 	@FindBy(xpath = GlobbingBuyForMePageXpaths.BUY_FOR_ME_TXT)
-	WebElement buyForMeTxt;
+	public WebElement buyForMeTxt;
 
 }

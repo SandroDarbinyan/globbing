@@ -23,7 +23,7 @@ public class GlobbingMenuPage extends GlobbingHeaderPage {
 	public WebElement logo;
 
 	@FindBy(xpath = GlobbingMenuPageXpaths.ABOUT_US_BTN)
-	WebElement aboutUsBtn;
+	public WebElement aboutUsBtn;
 
 	@FindBy(xpath = GlobbingMenuPageXpaths.CONTACT_US_BTN)
 	public WebElement contactUsBtn;

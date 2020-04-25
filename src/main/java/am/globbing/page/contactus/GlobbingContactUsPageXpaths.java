@@ -19,5 +19,8 @@ public class GlobbingContactUsPageXpaths{
 	public static final String SUBJECT_IDEA = "//ul[@class='select2-results__options']/li[1]";
 	public static final String INVALID_EMAIL = "//p[contains(.,'Invalid e-mail')]";
 	public static final String INVALID_MESSAGE = "//p[contains(.,'Invalid message')]";
+	public static final String FAQ_LINK = "//a[@href='https://am.globbing.com/en/faq']";
+	public static final String RESTRICTED_ITEMS_LINK = "//a[@href='https://am.globbing.com/en/restricted-items']";
+	public static final String TERMS_AND_CONDITIONS_LINK = "//a[@href='https://am.globbing.com/en/terms/']";
 	
 }

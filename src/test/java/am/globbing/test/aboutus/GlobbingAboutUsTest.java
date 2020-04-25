@@ -40,6 +40,7 @@ public class GlobbingAboutUsTest extends GlobbingBaseTest {
 		Assert.assertTrue(page.aboutUsTxt.isDisplayed());
 
 		// STEP 19.3:Click on "Team" button
+		page.verifyElementClickable(page.teamButton);
 		page.goToTeam();
 		Assert.assertTrue(page.teamSection.isDisplayed());
 
@@ -53,11 +54,13 @@ public class GlobbingAboutUsTest extends GlobbingBaseTest {
 	public void goToSocialResponsibilityTest() {
 		// STEP 20.2:Click on "About Us" button
 		GlobbingMenuPage menu = new GlobbingMenuPage(driver);
+		menu.verifyElementClickable(menu.aboutUsBtn);
 		GlobbingAboutUsPage page = menu.gotToAboutUsPage();
 		page.verifyElementClickable(page.aboutUsTxt);
 		Assert.assertTrue(page.aboutUsTxt.isDisplayed());
 
 		// STEP 20.3:Click on "Social Responsibility" button
+		page.verifyElementClickable(page.socialResponsibilityButton);
 		page.goToSocialResponsibility();
 		Assert.assertTrue(page.socialResponsibilitySection.isDisplayed());
 

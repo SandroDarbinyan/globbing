@@ -1,19 +1,20 @@
 package am.globbing.page.contactus;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import am.globbing.page.faq.GlobbingFaqPage;
 import am.globbing.page.instagram.GlobbingInstagramPage;
 import am.globbing.page.menu.GlobbingMenuPage;
+import am.globbing.page.restricteditems.GlobbingRestrictedItemsPage;
+import am.globbing.page.termsandconditions.GlobbingTermsAndConditionsPage;
 import am.globbing.page.youtube.GlobbingYoutubePage;
 
 public class GlobbingContactUsPage extends GlobbingMenuPage {
 
 	public GlobbingContactUsPage(WebDriver driver) {
 		super(driver);
-
 	}
 
 	@FindBy(xpath = GlobbingContactUsPageXpaths.CONTACT_US_TXT)
@@ -70,6 +71,15 @@ public class GlobbingContactUsPage extends GlobbingMenuPage {
 	@FindBy(xpath = GlobbingContactUsPageXpaths.INVALID_MESSAGE)
 	public WebElement invalidMessage;
 	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.FAQ_LINK)
+	public WebElement faqLink;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.RESTRICTED_ITEMS_LINK)
+	public WebElement restrictedItemsLink;
+	
+	@FindBy(xpath = GlobbingContactUsPageXpaths.TERMS_AND_CONDITIONS_LINK)	
+	public WebElement termsAndConditionsLink;
+	
 		
 	public void clickOnArabkirBranch() {
 		arabkirBranch.click();
@@ -114,7 +124,20 @@ public class GlobbingContactUsPage extends GlobbingMenuPage {
 		closeModale.click();
 	}
 	
+	public GlobbingFaqPage clickOnFaqLink() {
+		faqLink.click();
+		return new GlobbingFaqPage(driver);
+	}
 	
+	public GlobbingRestrictedItemsPage clickOnRestrictedItemsLink () {
+		restrictedItemsLink.click();
+		return new GlobbingRestrictedItemsPage(driver);
+	}
+	
+	public GlobbingTermsAndConditionsPage clickOntermsAndConditionsLink () {
+		termsAndConditionsLink.click();
+		return new GlobbingTermsAndConditionsPage(driver);
+	}
 	
 	
 	

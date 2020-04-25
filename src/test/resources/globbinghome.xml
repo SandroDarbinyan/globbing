@@ -47,6 +47,9 @@
 				<include name="contactFormFunctionalityTest1" />
 				<include name="contactFormFunctionalityTest2" />
 				<include name="contactFormFunctionalityTest3" />
+				<include name="faqFunctionalityTest" />
+				<include name="restrictedItemsFunctionalityTest" />
+				<include name="termsAndConditionsFunctionalityTest" />
 			</class>
 		</classes>
 	</test>
